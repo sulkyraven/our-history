@@ -1,0 +1,10 @@
+.env
+node_modules
+package-lock.json
+server/db/**.json
+server/sessions/**
+!server/sessions/df.txt
+client/img/**
+!client/img/df.txt
+client/**.html
+example

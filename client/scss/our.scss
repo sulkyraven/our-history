@@ -1,0 +1,390 @@
+$bg: #dedede;
+$cl: #1b1b1b;
+$darker: #333333;
+$gy: #808080;
+$dlime: #819647;
+// $crimson: #964747;
+$crimson: #821D30;
+$lcrimson: #e25454;
+$tp2: #252b3515;
+$cream: #F3EAC0;
+$important: #FFA3B8;
+$input_placeholder: #bbbbbb;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  width: 100%;
+  height: 100dvh;
+  background-color: $bg;
+  color: $cl;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #808080;
+  background-color: linear-gradient(180deg, #a56a85, #7b68a7);
+  width: 5px;
+  height: 5px;
+  border-radius: 10px;
+}
+a {
+  color: $crimson;
+}
+button, input, textarea {
+  outline: none;
+  border: none;
+  font-size: 1em;
+  display: block;
+}
+button, [role="button"] {
+  cursor: pointer;
+}
+img {
+  display: block;
+}
+.section {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.center {
+  text-align: center;
+}
+.right {
+  text-align: right;
+}
+.welcome {
+  background-color: #00000010;
+  .user-summary {
+    font-size: 1.2em;
+  }
+  .user-signout {
+    margin-top: 10px;
+    button {
+      margin: auto;
+      padding: 10px;
+      background-color: $crimson;
+      color: $bg;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+  }
+}
+.footer {
+  width: 100%;
+  background-color: $darker;
+  color: $bg;
+  padding: 20px;
+  text-align: center;
+  p {
+    font-size: 0.9em;
+    i {
+      color: $important;
+    }
+  }
+}
+.main {
+  .card {
+    position: relative;
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    border: 1px solid $cl;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    overflow: hidden;
+    transition: 0.2s;
+  }
+  .card.folder::before {
+    content: "\f07b";
+    font-family: "Font Awesome 6 Pro";
+  }
+  .card.folder:hover::before {
+    content: "\f07c";
+    font-family: "Font Awesome 6 Pro";
+  }
+  .card.upload::before {
+    content: "\2b";
+    font-family: "Font Awesome 6 Pro";
+  }
+  .card.upload:hover::before {
+    content: "\f093";
+    font-family: "Font Awesome 6 Pro";
+  }
+  .card.search::before {
+    content: "\f002";
+    font-family: "Font Awesome 6 Pro";
+  }
+  .card.search:hover::before {
+    content: "\f81a";
+    font-family: "Font Awesome 6 Pro";
+  }
+  .card:last-child {
+    margin-bottom: 0;
+  }
+  .card:hover::after {
+    content: "\f061";
+    font-family: "Font Awesome 6 Pro";
+    position: absolute;
+    right: 40px;
+    font-size: 1.5em;
+    padding: 10px;
+    color: $bg;
+  }
+  .card:hover {
+    border-left: 25px solid $cl;
+    background-color: $crimson;
+    color: $bg;
+  }
+}
+.nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;left: 0;
+  width: 100%;
+  max-width: unset;
+  height: 70px;
+  background-color: $crimson;
+  color: $bg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .action {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 20px;
+    .back {
+      .btn-back {
+        background-color: transparent;
+        color: $bg;
+        font-size: 1.5em;
+      }
+    }
+    .title {
+      font-size: 1.2em;
+    }
+  }
+  .menu {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 20px;
+    .btn {
+      background-color: transparent;
+      color: $bg;
+      font-size: 1.5em;
+    }
+  }
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+  .card {
+    width: 215px;
+    padding: 20px;
+    border: 1px solid $input_placeholder;
+    background-color: #efefef;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    .photo {
+      width: 100%;
+      height: 150px;
+      border-radius: 10px;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .tags {
+      margin-top: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      span {
+        font-size: 0.9em;
+        border-radius: 5px;
+      }
+      span::after {
+        content: "\f02b";
+        font-family: "Font Awesome 6 Pro";
+        font-size: 0.7em;
+        margin-left: 2px;
+      }
+    }
+  }
+}
+.underline {
+  border-bottom: 1px solid $cl;
+  margin-top: 70px;
+}
+.item {
+  .photo {
+    width: 100%;
+    margin-top: 12px;
+    margin-bottom: 32px;
+    img {
+      max-width: calc(100% - 12px);
+      max-height: 500px;
+      margin:  0 auto;
+      outline: 1px solid $cl;
+      outline-offset: 5px;
+    }
+  }
+  .detail {
+    .card {
+      border: 1px solid $cl;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      .title {
+        padding: 10px;
+        background-color: $crimson;
+        color: $cream;
+        font-weight: bold;
+        text-align: center;
+      }
+      .value {
+        padding: 10px;
+        text-align: center;
+      }
+    }
+    .card:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .actions {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    button {
+      width: calc(100% / 2);
+      padding: 10px;
+      background-color: transparent;
+      border: 1px solid $cl;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.2s;
+    }
+    button:hover {
+      background-color: $cl;
+      color: $bg;
+    }
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    .card {
+      background-color: $cl;
+      padding: 5px 7px;
+      color: $bg;
+      border-radius: 5px;
+      font-size: 0.9em;
+      text-decoration: none;
+    }
+    .card:before {
+      content: "\f02b";
+      font-family: "Font Awesome 6 Pro";
+      margin-right: 5px;
+    }
+  }
+}
+.uploadform {
+  .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid $cl;
+    border-radius: 5px;
+    transition: 0.2s;
+  }
+  .btn:hover {
+    background-color: $cl;
+    color: $bg;
+  }
+  .list {
+    margin: 20px 0;
+    .card {
+      width: 100%;
+      border: 1px solid $cl;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      .photo {
+        background-color: $cl;
+        width: 100%;
+        border-radius: 5px;
+        overflow: hidden;
+        img {
+          max-width: 100%;
+          max-height: 300px;
+          margin: 0 auto;
+        }
+      }
+      .field {
+        margin-top: 10px;
+        input {
+          width: 100%;
+          padding: 10px;
+          background-color: $tp2;
+          border-left: 1px solid transparent;
+          border-bottom: 1px solid transparent;
+          border-radius: 5px;
+        }
+        input:focus {
+          border-color: $crimson;
+        }
+        p {
+          margin-bottom: 3px;
+          span {
+            font-style: italic;
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+    .card:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@import "./animation";
+@import "./property";
+@import "./signin";

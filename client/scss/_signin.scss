@@ -1,0 +1,59 @@
+.signin {
+  .field {
+    width: 100%;
+    margin-bottom: 20px;
+    p {
+      margin-bottom: 5px;
+    }
+    .sm {
+      font-size: 0.9em;
+      font-style: italic;
+      color: $gy;
+    }
+    .barrier {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $tp2;
+      border-left: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      border-radius: 10px;
+      input {
+        width: 100%;
+        padding: 10px;
+        background-color: transparent;
+      }
+      input.doubled {
+        width: calc(100% - 30px);
+      }
+      [name="code"] {
+        letter-spacing: 5px;
+      }
+      .swipe {
+        text-align: center;
+        padding-right: 10px;
+      }
+    }
+    .barrier:focus-within {
+      border-color: $crimson;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: $crimson;
+      font-weight: bold;
+      color: $bg;
+      border-radius: 10px;
+    }
+  }
+}
+.watermark {
+  p {
+    font-size: 0.9em;
+    color: $gy;
+    i {
+      color: $important;
+    }
+  }
+}

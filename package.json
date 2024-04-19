@@ -1,0 +1,33 @@
+{
+  "name": "our-history",
+  "version": "0.0.1",
+  "description": "private site to rewind our history together",
+  "main": "server/app.js",
+  "scripts": {
+    "dev": "nodemon .",
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sulkyraven/our-history.git"
+  },
+  "author": "Devanka761 <devanka@protonmail.com> (https://devanka.id/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sulkyraven/our-history/issues"
+  },
+  "homepage": "https://github.com/sulkyraven/our-history#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.13",
+    "session-file-store": "^1.5.0"
+  }
+}

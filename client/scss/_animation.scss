@@ -1,0 +1,41 @@
+@keyframes pop_in {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  } 80% {
+    opacity: 1;
+    transform: scale(1.1);
+  } 100% {
+    transform: scale(1);
+  }
+}
+@keyframes pop_out {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  } 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+@keyframes spinning {
+  0% {
+    transform: rotate(0deg);
+  } 100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes slide_left_in {
+  0% {
+    transform: translateX(calc(100% - 50px));
+  } 100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide_left_out {
+  0% {
+    transform: translateX(0);
+  } 100% {
+    transform: translateX(100%);
+  }
+}
